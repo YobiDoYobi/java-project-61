@@ -1,4 +1,4 @@
-package hexlet.code;
+package hexlet.code.games;
 
 import java.io.BufferedReader;
 import java.io.IOException;
