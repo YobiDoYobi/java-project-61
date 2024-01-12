@@ -37,7 +37,7 @@ public class Engine {
 		return answer;
 	}
 
-	public static void end(boolean gameWin) {
+	public static void end() {
 		if (gameWin) {
 			System.out.println("Congratulations, " + userName + "!");
 		} else {
@@ -45,13 +45,13 @@ public class Engine {
 		}
 	}
 
-	public static boolean checkAnswer(String answer, String trueAnswer) {
+	public static void checkAnswer(String answer, String trueAnswer) {
 		if (answer.equals(trueAnswer)) {
 			System.out.println("Correct!");
+			gameWin = true;
 		} else {
 			System.out.printf("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'\n");
-			return false;
+			gameWin = false;
 		}
-		return true;
 	}
 }

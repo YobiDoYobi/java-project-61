@@ -10,9 +10,9 @@ public class Even {
 		for (int i = 0; i < countOfRounds & gameWin; i++) {
 			int number = random();
 			askQuestion(number);
-			gameWin = checkAnswer(getAnswer(), getTrueAnswer(number));
+			checkAnswer(getAnswer(), getTrueAnswer(number));
 		}
-		end(gameWin);
+		end();
 	}
 
 	private static String getTrueAnswer(int number) {
