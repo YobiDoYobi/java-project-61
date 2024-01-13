@@ -15,6 +15,7 @@ public class Progression {
     public static void startGame() throws IOException {
         final int startRange = 1;
         final int endRange = 10;
+        final int countNumbersInProgression = 10;
         start("What number is missing in the progression?");
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
             int startProgression = random(startRange, endRange);
@@ -23,7 +24,7 @@ public class Progression {
             int orderNumber = random(startRange, endRange);
             int currNumber = startProgression;
             StringBuilder question = new StringBuilder();
-            for (int j = 0; j < 10; j++) {
+            for (int j = 0; j < countNumbersInProgression; j++) {
                 if (j != orderNumber) {
                     question.append(currNumber).append(" ");
                 } else {
