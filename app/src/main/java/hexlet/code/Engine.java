@@ -13,7 +13,7 @@ public class Engine {
 
 
 	public static void start(String rule) throws IOException {
-		System.out.print("Welcome to the Brain Games!\nMay I have your name? ");
+		System.out.print("\nWelcome to the Brain Games!\nMay I have your name? ");
 		userName = reader.readLine();
 		System.out.println("Hello, " + userName + "!");
 		System.out.println(rule);
