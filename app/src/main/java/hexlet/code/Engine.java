@@ -10,7 +10,8 @@ public class Engine {
     private static String userName;
     private static boolean gameWin = true;
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
+    private static final int START_RANGE = 0;
+    private static final int END_RANGE = 100;
 
     public static void start(String rule) throws IOException {
         System.out.print("\nWelcome to the Brain Games!\nMay I have your name? ");
@@ -21,6 +22,10 @@ public class Engine {
 
     public static int random(int start, int end) {
         return (int) (Math.random() * end + start);
+    }
+
+    public static int random() {
+        return random(START_RANGE, END_RANGE);
     }
 
     public static <T> void askQuestion(T question) {
@@ -38,15 +43,11 @@ public class Engine {
     }
 
     public static int getAnswerInt() throws IOException {
-        System.out.print("\nYour answer: ");
-        String answer = reader.readLine().toLowerCase(Locale.ROOT);
-        while (answer.isEmpty()) {
-            System.out.print("Your answer is empty. Please enter answer: ");
-            answer = reader.readLine().toLowerCase(Locale.ROOT);
-        }
+        String answer = "";
         Integer answerInt = null;
         while (answerInt == null) {
             try {
+                answer = getAnswerString();
                 answerInt = Integer.parseInt(answer);
             } catch (NumberFormatException e) {
                 System.out.print("You entered not numeric value: " + answer + "! Please enter correct value!\n");

@@ -13,8 +13,8 @@ import static hexlet.code.Engine.end;
 
 public class Progression {
     public static void startGame() throws IOException {
-        int startRange = 1;
-        int endRange = 10;
+        final int startRange = 1;
+        final int endRange = 10;
         start("What number is missing in the progression?");
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
             int startProgression = random(startRange, endRange);

@@ -14,14 +14,12 @@ import static hexlet.code.Engine.end;
 public class Calc {
 
     public static void startGame() throws IOException {
-        int startRange = 0;
-        int endRange = 100;
-        int startRangeOperation = 0;
-        int endRangeOperation = 3;
+        final int startRangeOperation = 0;
+        final int endRangeOperation = 3;
         start("What is the result of the expression?");
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int number1 = random(startRange, endRange);
-            int number2 = random(startRange, endRange);
+            int number1 = random();
+            int number2 = random();
             int trueAnswer = 0;
             int operation = random(startRangeOperation, endRangeOperation); //0 +, 1 -, 2 *
             String question = switch (operation) {

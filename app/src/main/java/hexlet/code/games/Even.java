@@ -14,11 +14,9 @@ import static hexlet.code.Engine.end;
 
 public class Even {
     public static void startGame() throws IOException {
-        int startRange = 0;
-        int endRange = 100;
         start("Answer 'yes' if the number is even, otherwise answer 'no'.");
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int number = random(startRange, endRange);
+            int number = random();
             askQuestion(number);
             checkAnswer(getAnswerString(), getTrueAnswer(number));
         }

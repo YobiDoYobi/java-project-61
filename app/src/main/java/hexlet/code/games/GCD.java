@@ -14,12 +14,10 @@ import static hexlet.code.Engine.getAnswerInt;
 
 public class GCD {
     public static void startGame() throws IOException {
-        int startRange = 0;
-        int endRange = 100;
         start("Find the greatest common divisor of given numbers.");
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int number1 = random(startRange, endRange);
-            int number2 = random(startRange, endRange);
+            int number1 = random();
+            int number2 = random();
             int trueAnswer = gcd(number1, number2);
             askQuestion(number1 + " " + number2);
             checkAnswer(getAnswerInt(), trueAnswer);
