@@ -8,16 +8,18 @@ import static hexlet.code.Engine.getAnswer;
 import static hexlet.code.Engine.checkAnswer;
 import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
-import static hexlet.code.Engine.gameWin;
+import static hexlet.code.Engine.isGameWin;
 import static hexlet.code.Engine.end;
 
 
 public class GCD {
     public static void startGame() throws IOException {
+        int startRange = 0;
+        int endRange = 100;
         start("Find the greatest common divisor of given numbers.");
-        for (int i = 0; i < COUNT_OF_ROUNDS & gameWin; i++) {
-            int number1 = random(0, 100);
-            int number2 = random(0, 100);
+        for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
+            int number1 = random(startRange, endRange);
+            int number2 = random(startRange, endRange);
             int trueAnswer = gcd(number1, number2);
             askQuestion(number1 + " " + number2);
             checkAnswer(getAnswer(), String.valueOf(trueAnswer));

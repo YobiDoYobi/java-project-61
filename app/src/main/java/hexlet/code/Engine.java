@@ -8,8 +8,8 @@ import java.util.Locale;
 public class Engine {
     public static final int COUNT_OF_ROUNDS = 3;
     private static String userName;
-    public static boolean gameWin = true;
-    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static boolean gameWin = true;
+    private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 
     public static void start(String rule) throws IOException {
@@ -53,5 +53,9 @@ public class Engine {
             System.out.printf("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'\n");
             gameWin = false;
         }
+    }
+
+    public static boolean isGameWin() {
+        return gameWin;
     }
 }

@@ -8,17 +8,19 @@ import static hexlet.code.Engine.getAnswer;
 import static hexlet.code.Engine.checkAnswer;
 import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
-import static hexlet.code.Engine.gameWin;
+import static hexlet.code.Engine.isGameWin;
 import static hexlet.code.Engine.end;
 
 public class Progression {
     public static void startGame() throws IOException {
+        int startRange = 1;
+        int endRange = 10;
         start("What number is missing in the progression?");
-        for (int i = 0; i < COUNT_OF_ROUNDS & gameWin; i++) {
-            int startProgression = random(1, 9);
-            int stepProgression = random(2, 10);
+        for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
+            int startProgression = random(startRange, endRange);
+            int stepProgression = random(startRange, endRange);
             int guessNumber = 0;
-            int orderNumber = random(1, 10);
+            int orderNumber = random(startRange, endRange);
             int currNumber = startProgression;
             StringBuilder question = new StringBuilder();
             for (int j = 0; j < 10; j++) {
