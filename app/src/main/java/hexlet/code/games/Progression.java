@@ -13,7 +13,7 @@ import static hexlet.code.Engine.end;
 
 public class Progression {
     public static void startGame() throws IOException {
-        final int startRange = 1;
+        final int startRange = 0;
         final int endRange = 10;
         final int countNumbersInProgression = 10;
         start("What number is missing in the progression?");
@@ -33,7 +33,7 @@ public class Progression {
                 }
                 currNumber += stepProgression;
             }
-            askQuestion(question);
+            askQuestion(String.valueOf(question).trim());
             checkAnswer(getAnswerInt(), guessNumber);
         }
         end();
