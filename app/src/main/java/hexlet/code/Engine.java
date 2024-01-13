@@ -13,6 +13,7 @@ public class Engine {
     private static final int START_RANGE = 0;
     private static final int END_RANGE = 100;
 
+
     public static void start(String rule) throws IOException {
         System.out.print("\nWelcome to the Brain Games!\nMay I have your name? ");
         userName = reader.readLine();
@@ -50,7 +51,7 @@ public class Engine {
                 answer = getAnswerString();
                 answerInt = Integer.parseInt(answer);
             } catch (NumberFormatException e) {
-                System.out.print("You entered not numeric value: " + answer + "! Please enter correct value!\n");
+                System.out.print("You entered not numeric value: " + answer + "! Please enter correct value!");
             }
         }
         return answerInt;

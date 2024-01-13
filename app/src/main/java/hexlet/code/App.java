@@ -6,6 +6,13 @@ import java.io.InputStreamReader;
 
 public class App {
     private static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    private static final int EXIT = 0;
+    private static final int CLI = 1;
+    private static final int EVEN = 2;
+    private static final int CALC = 3;
+    private static final int GCD = 4;
+    private static final int PROGRESSION = 5;
+    private static final int PRIME = 6;
 
     public static void main(String[] args) throws IOException {
         int game = getGame();
@@ -14,13 +21,13 @@ public class App {
 
     private static void runGame(int game) throws IOException {
         switch (game) {
-            case 0 -> System.out.println("Bye!");
-            case 1 -> hexlet.code.games.Cli.startGame();
-            case 2 -> hexlet.code.games.Even.startGame();
-            case 3 -> hexlet.code.games.Calc.startGame();
-            case 4 -> hexlet.code.games.GCD.startGame();
-            case 5 -> hexlet.code.games.Progression.startGame();
-            case 6 -> hexlet.code.games.Prime.startGame();
+            case EXIT -> System.out.println("Bye!");
+            case CLI -> hexlet.code.games.Cli.startGame();
+            case EVEN -> hexlet.code.games.Even.startGame();
+            case CALC -> hexlet.code.games.Calc.startGame();
+            case GCD -> hexlet.code.games.GCD.startGame();
+            case PROGRESSION -> hexlet.code.games.Progression.startGame();
+            case PRIME -> hexlet.code.games.Prime.startGame();
             default -> {
                 System.out.println("There is no variant '" + game + "'");
                 checkGame(game);
@@ -29,7 +36,7 @@ public class App {
     }
 
     private static void checkGame(int game) throws IOException {
-        if (game < 0 || game > 6) {
+        if (game < EXIT || game > PRIME) {
             game = getGame();
             runGame(game);
         }
