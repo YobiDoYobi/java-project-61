@@ -19,8 +19,8 @@ public class Engine {
 		System.out.println(rule);
 	}
 
-	public static int random() {
-		return (int) (Math.random() * 100);
+	public static int random(int start, int end) {
+		return (int) (Math.random() * end + start);
 	}
 
 	public static <T> void askQuestion(T question) {

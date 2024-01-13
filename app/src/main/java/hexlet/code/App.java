@@ -1,9 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Cli;
-import hexlet.code.games.Even;
-import hexlet.code.games.GCD;
+import hexlet.code.games.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -18,6 +15,7 @@ public class App {
 				2 - Even
 				3 - Calc
 				4 - GCD
+				5 - Progression
 				0 - Exit
 				Your choice: """);
 		String choice = reader.readLine();
@@ -30,6 +28,8 @@ public class App {
 			Calc.startGame();
 		} else if (game == 4) {
 			GCD.startGame();
+		} else if (game == 5) {
+			Progression.startGame();
 		}
 	}
 }

@@ -12,3 +12,7 @@ Calc
 GCD
 
 <a href="https://asciinema.org/a/aCF3mzUWZi7jUCEKnCOeFzUe5" target="_blank"><img src="https://asciinema.org/a/aCF3mzUWZi7jUCEKnCOeFzUe5.svg" /></a>
+
+Progression
+
+<a href="https://asciinema.org/a/vAmWCjUeEvq5eQPCNB6IbZe9V" target="_blank"><img src="https://asciinema.org/a/vAmWCjUeEvq5eQPCNB6IbZe9V.svg" /></a>

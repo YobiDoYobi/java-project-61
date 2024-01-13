@@ -9,10 +9,10 @@ public class Calc {
 	public static void startGame() throws IOException {
 		start("What is the result of the expression?");
 		for (int i = 0; i < countOfRounds & gameWin; i++) {
-			int number1 = random();
-			int number2 = random();
+			int number1 = random(0, 100);
+			int number2 = random(0, 100);
 			int trueAnswer = 0;
-			int operation = (int) (Math.random() * 3); //0 +, 1 -, 2 *
+			int operation = random(0, 3); //0 +, 1 -, 2 *
 			String question = switch (operation) {
 				case 1 -> {
 					trueAnswer = number1 - number2;

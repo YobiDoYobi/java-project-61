@@ -8,7 +8,7 @@ public class Even {
 	public static void startGame() throws IOException {
 		start("Answer 'yes' if the number is even, otherwise answer 'no'.");
 		for (int i = 0; i < countOfRounds & gameWin; i++) {
-			int number = random();
+			int number = random(0, 100);
 			askQuestion(number);
 			checkAnswer(getAnswer(), getTrueAnswer(number));
 		}
