@@ -27,14 +27,32 @@ public class Engine {
         System.out.printf("\nQuestion: " + question);
     }
 
-    public static String getAnswer() throws IOException {
+    public static String getAnswerString() throws IOException {
         System.out.print("\nYour answer: ");
         String answer = reader.readLine().toLowerCase(Locale.ROOT);
         while (answer.isEmpty()) {
             System.out.print("Your answer is empty. Please enter answer: ");
             answer = reader.readLine().toLowerCase(Locale.ROOT);
         }
-        return answer;
+        return answer.trim();
+    }
+
+    public static int getAnswerInt() throws IOException {
+        System.out.print("\nYour answer: ");
+        String answer = reader.readLine().toLowerCase(Locale.ROOT);
+        while (answer.isEmpty()) {
+            System.out.print("Your answer is empty. Please enter answer: ");
+            answer = reader.readLine().toLowerCase(Locale.ROOT);
+        }
+        Integer answerInt = null;
+        while (answerInt == null) {
+            try {
+                answerInt = Integer.parseInt(answer);
+            } catch (NumberFormatException e) {
+                System.out.print("You entered not numeric value: " + answer + "! Please enter correct value!\n");
+            }
+        }
+        return answerInt;
     }
 
     public static void end() {
@@ -47,6 +65,16 @@ public class Engine {
 
     public static void checkAnswer(String answer, String trueAnswer) {
         if (answer.equals(trueAnswer)) {
+            System.out.println("Correct!");
+            gameWin = true;
+        } else {
+            System.out.printf("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + trueAnswer + "'\n");
+            gameWin = false;
+        }
+    }
+
+    public static void checkAnswer(int answer, int trueAnswer) {
+        if (answer == trueAnswer) {
             System.out.println("Correct!");
             gameWin = true;
         } else {

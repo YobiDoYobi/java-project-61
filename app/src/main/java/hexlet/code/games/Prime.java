@@ -5,7 +5,7 @@ import java.util.stream.IntStream;
 
 import static hexlet.code.Engine.askQuestion;
 import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswer;
+import static hexlet.code.Engine.getAnswerString;
 import static hexlet.code.Engine.checkAnswer;
 import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
@@ -20,7 +20,7 @@ public class Prime {
         for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
             int number = random(startRange, endRange);
             askQuestion(number);
-            checkAnswer(getAnswer(), getTrueAnswer(number));
+            checkAnswer(getAnswerString(), getTrueAnswer(number));
         }
         end();
     }

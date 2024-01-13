@@ -4,12 +4,12 @@ import java.io.IOException;
 
 import static hexlet.code.Engine.askQuestion;
 import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswer;
 import static hexlet.code.Engine.checkAnswer;
 import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
 import static hexlet.code.Engine.isGameWin;
 import static hexlet.code.Engine.end;
+import static hexlet.code.Engine.getAnswerInt;
 
 
 public class GCD {
@@ -22,7 +22,7 @@ public class GCD {
             int number2 = random(startRange, endRange);
             int trueAnswer = gcd(number1, number2);
             askQuestion(number1 + " " + number2);
-            checkAnswer(getAnswer(), String.valueOf(trueAnswer));
+            checkAnswer(getAnswerInt(), trueAnswer);
         }
         end();
     }

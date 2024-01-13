@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import static hexlet.code.Engine.askQuestion;
 import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswer;
+import static hexlet.code.Engine.getAnswerInt;
 import static hexlet.code.Engine.checkAnswer;
 import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
@@ -39,7 +39,7 @@ public class Calc {
                 }
             };
             askQuestion(question);
-            checkAnswer(getAnswer(), String.valueOf(trueAnswer));
+            checkAnswer(getAnswerInt(), trueAnswer);
         }
         end();
     }
