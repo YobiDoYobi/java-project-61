@@ -1,26 +1,24 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import hexlet.code.Util;
+
 import java.io.IOException;
 
-import static hexlet.code.Engine.askQuestion;
-import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswerString;
-import static hexlet.code.Engine.checkAnswer;
-import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
-import static hexlet.code.Engine.isGameWin;
-import static hexlet.code.Engine.end;
 
 
 public class Even {
     public static void startGame() throws IOException {
-        start("Answer 'yes' if the number is even, otherwise answer 'no'.");
-        for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int number = random();
-            askQuestion(number);
-            checkAnswer(getAnswerString(), getTrueAnswer(number));
+        String rule = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        int sizeOfMass = COUNT_OF_ROUNDS * 2;
+        String[] data = new String[sizeOfMass];
+        for (int i = 0; i < sizeOfMass; i++) {
+            int question = Util.random();
+            data[i] = String.valueOf(question);
+            data[++i] = getTrueAnswer(question);
         }
-        end();
+        Engine.game(rule, data);
     }
 
     private static String getTrueAnswer(int number) {

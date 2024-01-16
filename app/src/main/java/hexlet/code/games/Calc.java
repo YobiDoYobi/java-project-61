@@ -1,27 +1,25 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import hexlet.code.Util;
+
 import java.io.IOException;
 
-import static hexlet.code.Engine.askQuestion;
-import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswerInt;
-import static hexlet.code.Engine.checkAnswer;
-import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
-import static hexlet.code.Engine.isGameWin;
-import static hexlet.code.Engine.end;
 
 public class Calc {
 
     public static void startGame() throws IOException {
         final int startRangeOperation = 0;
         final int endRangeOperation = 3;
-        start("What is the result of the expression?");
-        for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int number1 = random();
-            int number2 = random();
+        String rule = "What is the result of the expression?";
+        int sizeOfMass = COUNT_OF_ROUNDS * 2;
+        String[] data = new String[sizeOfMass];
+        for (int i = 0; i < sizeOfMass; i++) {
+            int number1 = Util.random();
+            int number2 = Util.random();
             int trueAnswer = 0;
-            int operation = random(startRangeOperation, endRangeOperation); //0 +, 1 -, 2 *
+            int operation = Util.random(startRangeOperation, endRangeOperation); //0 +, 1 -, 2 *
             String question = switch (operation) {
                 case 1 -> {
                     trueAnswer = number1 - number2;
@@ -36,9 +34,9 @@ public class Calc {
                     yield number1 + " + " + number2;
                 }
             };
-            askQuestion(question);
-            checkAnswer(getAnswerInt(), trueAnswer);
+            data[i] = question;
+            data[++i] = String.valueOf(trueAnswer);
         }
-        end();
+        Engine.game(rule, data);
     }
 }

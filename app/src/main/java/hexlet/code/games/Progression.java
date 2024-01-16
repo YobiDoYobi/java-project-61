@@ -1,27 +1,26 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+import hexlet.code.Util;
+
 import java.io.IOException;
 
-import static hexlet.code.Engine.askQuestion;
-import static hexlet.code.Engine.start;
-import static hexlet.code.Engine.getAnswerInt;
-import static hexlet.code.Engine.checkAnswer;
-import static hexlet.code.Engine.random;
 import static hexlet.code.Engine.COUNT_OF_ROUNDS;
-import static hexlet.code.Engine.isGameWin;
-import static hexlet.code.Engine.end;
+
 
 public class Progression {
     public static void startGame() throws IOException {
         final int startRange = 0;
         final int endRange = 10;
         final int countNumbersInProgression = 10;
-        start("What number is missing in the progression?");
-        for (int i = 0; i < COUNT_OF_ROUNDS & isGameWin(); i++) {
-            int startProgression = random(startRange, endRange);
-            int stepProgression = random(startRange, endRange);
+        String rule = "What number is missing in the progression?";
+        int sizeOfMass = COUNT_OF_ROUNDS * 2;
+        String[] data = new String[sizeOfMass];
+        for (int i = 0; i < sizeOfMass; i++) {
+            int startProgression = Util.random(startRange, endRange);
+            int stepProgression = Util.random(startRange, endRange);
             int guessNumber = 0;
-            int orderNumber = random(startRange, endRange);
+            int orderNumber = Util.random(startRange, endRange);
             int currNumber = startProgression;
             StringBuilder question = new StringBuilder();
             for (int j = 0; j < countNumbersInProgression; j++) {
@@ -33,9 +32,9 @@ public class Progression {
                 }
                 currNumber += stepProgression;
             }
-            askQuestion(String.valueOf(question).trim());
-            checkAnswer(getAnswerInt(), guessNumber);
+            data[i] = String.valueOf(question).trim();
+            data[++i] = String.valueOf(guessNumber);
         }
-        end();
+        Engine.game(rule, data);
     }
 }
