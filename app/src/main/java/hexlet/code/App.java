@@ -1,11 +1,16 @@
 package hexlet.code;
 
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Even;
+
 import java.io.IOException;
 import java.util.Scanner;
 
 public class App {
     private static Scanner sc = new Scanner(System.in);
-
 
     public static void main(String[] args) throws IOException {
         System.out.print("""
@@ -25,12 +30,12 @@ public class App {
         String menu = sc.nextLine();
         switch (menu) {
             case "0" -> System.out.println("Bye!");
-            case "1" -> hexlet.code.games.Cli.startGame();
-            case "2" -> hexlet.code.games.Even.startGame();
-            case "3" -> hexlet.code.games.Calc.startGame();
-            case "4" -> hexlet.code.games.GCD.startGame();
-            case "5" -> hexlet.code.games.Progression.startGame();
-            case "6" -> hexlet.code.games.Prime.startGame();
+            case "1" -> Cli.startCli();
+            case "2" -> Even.startGame();
+            case "3" -> Calc.startGame();
+            case "4" -> GCD.startGame();
+            case "5" -> Progression.startGame();
+            case "6" -> Prime.startGame();
             default -> noGame(menu);
         }
     }

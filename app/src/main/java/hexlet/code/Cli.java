@@ -1,11 +1,11 @@
-package hexlet.code.games;
+package hexlet.code;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Cli {
-    public static void startGame() throws IOException {
+    public static void startCli() throws IOException {
         System.out.println("Welcome to the Brain Games!");
         System.out.print("May I have your name? ");
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));

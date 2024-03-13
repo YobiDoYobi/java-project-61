@@ -1,23 +1,46 @@
-### Hexlet tests and linter status:
+# Games with numbers
 [![Actions Status](https://github.com/YobiDoYobi/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/YobiDoYobi/java-project-61/actions)
 <a href="https://codeclimate.com/github/YobiDoYobi/java-project-61/maintainability"><img src="https://api.codeclimate.com/v1/badges/16941746717e144e3cbd/maintainability" /></a>
 
-Even
+## Setup
 
-<a href="https://asciinema.org/a/dd9TrspU6NmPmN22YUEF4j4vw" target="_blank"><img src="https://asciinema.org/a/dd9TrspU6NmPmN22YUEF4j4vw.svg" /></a>
+```bash
+gradle installDist
+```
 
-Calc
+## Run
 
-<a href="https://asciinema.org/a/sdv08n9Fh37EWKuneeYPb2mkb" target="_blank"><img src="https://asciinema.org/a/sdv08n9Fh37EWKuneeYPb2mkb.svg" /></a>
+```bash
+./build/install/app/bin/app
+```
 
-GCD
+## Description
+1. Choose game number. 
+2. Enter your name. 
+3. You have 3 rounds. You need enter 3 right answers to win.
+4. To escape enter "exit"
 
-<a href="https://asciinema.org/a/aCF3mzUWZi7jUCEKnCOeFzUe5" target="_blank"><img src="https://asciinema.org/a/aCF3mzUWZi7jUCEKnCOeFzUe5.svg" /></a>
+### Even
+Is the number is even?
 
-Progression
+<a href="https://asciinema.org/a/YIs9Idq7zsYDsK8Nip8LMNw6G" target="_blank"><img src="https://asciinema.org/a/YIs9Idq7zsYDsK8Nip8LMNw6G.svg" /></a>
 
-<a href="https://asciinema.org/a/vAmWCjUeEvq5eQPCNB6IbZe9V" target="_blank"><img src="https://asciinema.org/a/vAmWCjUeEvq5eQPCNB6IbZe9V.svg" /></a>
+### Calc
+Solve mathematical expression
 
-Prime
+<a href="https://asciinema.org/a/bNQQzLQ700K3H3rY6iilRXJVs" target="_blank"><img src="https://asciinema.org/a/bNQQzLQ700K3H3rY6iilRXJVs.svg" /></a>
 
-<a href="https://asciinema.org/a/mt8K00IwURB7Uxg8w0TP3lx5r" target="_blank"><img src="https://asciinema.org/a/mt8K00IwURB7Uxg8w0TP3lx5r.svg" /></a>
+### GCD
+Find the greatest common divisor of given numbers
+
+<a href="https://asciinema.org/a/XgnhhWvE16lNMK3xrce6zShXE" target="_blank"><img src="https://asciinema.org/a/XgnhhWvE16lNMK3xrce6zShXE.svg" /></a>
+
+### Progression
+Find missing number in the progression
+
+<a href="https://asciinema.org/a/DlNADqMiag50IzPkfV2PURW38" target="_blank"><img src="https://asciinema.org/a/DlNADqMiag50IzPkfV2PURW38.svg" /></a>
+
+### Prime
+Is given number is prime?
+
+<a href="https://asciinema.org/a/DlNADqMiag50IzPkfV2PURW38" target="_blank"><img src="https://asciinema.org/a/DlNADqMiag50IzPkfV2PURW38.svg" /></a>
