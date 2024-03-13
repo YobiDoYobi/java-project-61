@@ -11,25 +11,27 @@ import static hexlet.code.Engine.COUNT_OF_ROUNDS;
 
 
 public class Progression {
-    private static final int startRange = 0;
-    private static final int endRange = 10;
+    private static final int START_RANGE = 0;
+    private static final int END_RANGE = 10;
 
     public static void startGame() throws IOException {
-        int countNumbersInProgression = 10;
+        final int countNumbersInProgression = 10;
         String rule = "What number is missing in the progression?";
         ArrayList<HashMap<String, String>> data = new ArrayList<>(COUNT_OF_ROUNDS);
         for (int i = 0; i < COUNT_OF_ROUNDS; i++) {
-            int stepProgression = Util.random(startRange, endRange);
-            int startProgression = Util.random(startRange, endRange);
+            int stepProgression = Util.random(START_RANGE, END_RANGE);
+            int startProgression = Util.random(START_RANGE, END_RANGE);
             data.add(generateProgression(countNumbersInProgression, startProgression, stepProgression));
         }
         Engine.game(rule, data);
     }
 
-    private static HashMap<String, String> generateProgression(int countNumbersInProgression, int startProgression, int stepProgression) {
+    private static HashMap<String, String> generateProgression(int countNumbersInProgression,
+                                                               int startProgression,
+                                                               int stepProgression) {
         HashMap<String, String> result = new HashMap<>();
         int guessNumber = 0;
-        int orderNumber = Util.random(startRange, endRange);
+        int orderNumber = Util.random(START_RANGE, END_RANGE);
         int currNumber = startProgression;
         StringBuilder question = new StringBuilder();
         for (int j = 0; j < countNumbersInProgression; j++) {

@@ -25,7 +25,8 @@ public class Engine {
             if (answer.trim().toLowerCase().equals(datum.get("Answer"))) {
                 System.out.println("Correct!");
             } else {
-                System.out.printf("\n'" + answer + "' is wrong answer ;(. Correct answer was '" + datum.get("Answer") + "'\n");
+                System.out.printf("\n'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + datum.get("Answer") + "'\n");
                 System.out.println("Let's try again, " + userName + "!");
                 return;
             }
