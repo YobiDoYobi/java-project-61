@@ -27,7 +27,7 @@ public class Calc {
             int randIndex = random.nextInt(length);
             char operation = operations.charAt(randIndex);
 
-            round.put("Question", number1 + String.valueOf(operation) + number2);
+            round.put("Question", number1 + " " + String.valueOf(operation) + " " + number2);
             round.put("Answer", getTrueAnswer(number1, number2, operation));
             data.add(round);
         }
