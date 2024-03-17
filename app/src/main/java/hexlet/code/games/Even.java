@@ -18,13 +18,13 @@ public class Even {
             int question = Util.random();
             HashMap<String, String> round = new HashMap<>();
             round.put("Question", String.valueOf(question));
-            round.put("Answer", getTrueAnswer(question) ? "yes" : "no");
+            round.put("Answer", isEven(question) ? "yes" : "no");
             data.add(round);
         }
         Engine.game(rule, data);
     }
 
-    private static boolean getTrueAnswer(int number) {
+    private static boolean isEven(int number) {
         return number % 2 == 0;
     }
 }

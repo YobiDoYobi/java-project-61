@@ -19,32 +19,36 @@ public class Progression {
         String rule = "What number is missing in the progression?";
         ArrayList<HashMap<String, String>> data = new ArrayList<>(COUNT_OF_ROUNDS);
         for (int i = 0; i < COUNT_OF_ROUNDS; i++) {
+            HashMap<String, String> round = new HashMap<>();
             int stepProgression = Util.random(START_RANGE, END_RANGE);
             int startProgression = Util.random(START_RANGE, END_RANGE);
-            data.add(generateProgression(countNumbersInProgression, startProgression, stepProgression));
+            int orderNumber = Util.random(START_RANGE, END_RANGE);
+            String guessNumber = null;
+            StringBuilder question = new StringBuilder();
+            String[] progression = generateProgression(countNumbersInProgression, startProgression, stepProgression);
+            for (int j = 0; j < progression.length; j++) {
+                if (j != orderNumber) {
+                    question.append(progression[j]).append(" ");
+                } else {
+                    question.append(".. ");
+                    guessNumber = progression[j];
+                }
+            }
+            round.put("Question", String.valueOf(question).trim());
+            round.put("Answer", String.valueOf(guessNumber));
+            data.add(round);
         }
         Engine.game(rule, data);
     }
 
-    private static HashMap<String, String> generateProgression(int countNumbersInProgression,
-                                                               int startProgression,
-                                                               int stepProgression) {
-        HashMap<String, String> result = new HashMap<>();
-        int guessNumber = 0;
-        int orderNumber = Util.random(START_RANGE, END_RANGE);
-        int currNumber = startProgression;
-        StringBuilder question = new StringBuilder();
-        for (int j = 0; j < countNumbersInProgression; j++) {
-            if (j != orderNumber) {
-                question.append(currNumber).append(" ");
-            } else {
-                question.append(".. ");
-                guessNumber = currNumber;
-            }
-            currNumber += stepProgression;
+    private static String[] generateProgression(int countNumbersInProgression,
+                                                int startProgression,
+                                                int stepProgression) {
+        String[] progression = new String[countNumbersInProgression];
+        progression[0] = String.valueOf(startProgression);
+        for (int j = 1; j < countNumbersInProgression; j++) {
+            progression[j] = String.valueOf(Integer.parseInt(progression[j - 1]) + stepProgression);
         }
-        result.put("Question", String.valueOf(question).trim());
-        result.put("Answer", String.valueOf(guessNumber));
-        return result;
+        return progression;
     }
 }
