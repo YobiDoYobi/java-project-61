@@ -28,13 +28,13 @@ public class Calc {
             char operation = operations.charAt(randIndex);
 
             round.put("Question", number1 + " " + String.valueOf(operation) + " " + number2);
-            round.put("Answer", String.valueOf(Calculate(number1, number2, operation)));
+            round.put("Answer", String.valueOf(calculate(number1, number2, operation)));
             data.add(round);
         }
         Engine.game(rule, data);
     }
 
-    private static int Calculate(int number1, int number2, char operation) {
+    private static int calculate(int number1, int number2, char operation) {
         return switch (operation) {
             case '-' -> number1 - number2;
             case '*' -> number1 * number2;
